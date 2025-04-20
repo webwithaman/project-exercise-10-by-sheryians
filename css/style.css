@@ -90,6 +90,8 @@ p {
   /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZMs2CPKC6-Ey8_TvPWw0xvOXIYRi6sa18xQ&s); */
   background-image: linear-gradient(rgba(0, 0, 0, 0.153), rgba(0, 0, 0, 0.221)),
     url(https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.153), rgba(0, 0, 0, 0.221)),
+    url(https://images.pexels.com/photos/7974826/pexels-photo-7974826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   background-size: 100% 100%;
   display: flex;
   align-items: center;
@@ -108,16 +110,16 @@ p {
 }
 
 .form-container h3 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 600;
   margin-bottom: 0.7rem;
-  text-transform: uppercase;
+  text-transform: capitalize;
 }
 
 .form-container .message {
   font-size: 1.2rem;
-  font-weight: 500;
-  color: rgb(151, 151, 151);
+  font-weight: 450;
+  color: rgb(176, 176, 176);
   text-transform: capitalize;
 }
 
@@ -180,6 +182,13 @@ form {
   border: none;
   font-family: var(--font-family-2);
   cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+@media (hover: hover) {
+  .submit-btn:hover {
+    background-color: rgba(0, 0, 0, 0.945);
+  }
 }
 
 .form-container .or-signup {
@@ -203,11 +212,15 @@ form {
 .icons img {
   padding-top: 0.4rem;
   width: 2rem;
+  cursor: pointer;
+}
+
+.icons img:nth-child(2) {
+  width: 2.2rem;
 }
 
 .icons img:last-child {
   padding-top: 0;
-  width: 2.8rem;
+  width: 2.7rem;
 }
-
 /* Page-Specific Styles End */
