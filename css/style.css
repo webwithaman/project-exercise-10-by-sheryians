@@ -1,0 +1,219 @@
+/* Google Fonts Import */
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&family=Nunito:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&family=Ubuntu:wght@300;400;500;700&display=swap");
+
+/* CSS Variables Start */
+:root {
+  /* Theme Colors */
+  --black: #000;
+  --white: #fff;
+
+  /* Theme Fonts */
+  --font-family-1: "Lato", sans-serif;
+  --font-family-2: "Poppins", sans-serif;
+  --font-family-3: "Oswald", sans-serif;
+  --font-family-4: "Ubuntu", sans-serif;
+  --font-family-5: "Roboto", sans-serif;
+  --font-family-6: "Nunito", sans-serif;
+  --font-family-7: "Gideon", sans-serif;
+}
+/* CSS Variables End */
+
+/* Reset Default Styles Start */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; /* 1rem = 10px */
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: var(--font-family-2);
+}
+
+body {
+  overflow-x: hidden;
+}
+/* Reset Default Styles End */
+
+/* Common Styles for Frequently Used Elements Start */
+a {
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s linear;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+
+input,
+textarea {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.4;
+}
+
+p {
+  line-height: 1.6;
+}
+/* Common Styles for Frequently Used Elements End */
+
+/* Reusable Components & Utility Classes Start */
+/* Reusable Components & Utility Classes End */
+
+/* Page-Specific Styles Start */
+.site-wrapper {
+  min-height: 100vh;
+  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZMs2CPKC6-Ey8_TvPWw0xvOXIYRi6sa18xQ&s); */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.153), rgba(0, 0, 0, 0.221)),
+    url(https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: 100% 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.form-container {
+  background-color: white;
+  padding: 2.5rem;
+  border-radius: 2rem;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.201);
+  width: 100%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.form-container h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+  text-transform: uppercase;
+}
+
+.form-container .message {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(151, 151, 151);
+  text-transform: capitalize;
+}
+
+form {
+  margin-block: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group .warning {
+  padding-inline: 1rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: rgb(252, 64, 64);
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s linear;
+}
+
+.input-box {
+  background-color: rgb(237, 237, 237);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.3rem;
+}
+
+.input-box i {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+.input-box input {
+  flex: 1;
+  background-color: transparent;
+  border: none;
+  padding: 0.8rem;
+  font-family: var(--font-family-2);
+  font-weight: 500;
+  color: grey;
+  letter-spacing: 0.4px;
+}
+
+.submit-btn {
+  margin-top: 1.2rem;
+  width: 100%;
+  background-color: black;
+  color: white;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.5rem;
+  letter-spacing: 0.4px;
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-family: var(--font-family-2);
+  cursor: pointer;
+}
+
+.form-container .or-signup {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: rgb(171, 171, 171);
+  text-transform: capitalize;
+  width: fit-content;
+  margin-inline: auto;
+  position: relative;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.icons img {
+  padding-top: 0.4rem;
+  width: 2rem;
+}
+
+.icons img:last-child {
+  padding-top: 0;
+  width: 2.8rem;
+}
+
+/* Page-Specific Styles End */
+
+/* Keyframes for Animations Start */
+@keyframes animation-name {
+  /* Define your keyframes here */
+}
+/* Keyframes for Animations End */
