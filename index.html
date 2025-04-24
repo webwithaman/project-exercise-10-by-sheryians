@@ -7,20 +7,10 @@
 
     <title>JavaScript Form Validation</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/images/favicon.png" />
-
-    <!-- FontAwesome CDN for icons -->
-    <script
-      src="https://kit.fontawesome.com/2bcb8da7fa.js"
-      crossorigin="anonymous"
-      defer
-    ></script>
-
     <!-- Custom External Stylesheets -->
     <link rel="stylesheet" href="css/style.css" />
-    <!-- <link rel="stylesheet" href="css/media-queries.css" /> -->
 
+    <!-- Remixicon CDN for icons -->
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
       rel="stylesheet"
@@ -30,23 +20,26 @@
   <body>
     <!-- Site Wrapper Start -->
     <div class="site-wrapper">
+      <!-- Form Container Start -->
       <div class="form-container">
         <h3>sign up</h3>
         <p class="message">
           results are available use up and review and enter to select
         </p>
-        <form action="" id="myForm">
+
+        <!-- Form Start -->
+        <form id="myForm">
           <div class="input-group">
             <div class="input-box">
               <i class="ri-user-fill"></i>
-              <input type="text" placeholder="Name" id="name-field" />
+              <input type="text" placeholder="Username" id="username-field" />
             </div>
             <div class="warning name-warning"></div>
           </div>
           <div class="input-group">
             <div class="input-box">
               <i class="ri-mail-fill"></i>
-              <input type="email" placeholder="Email" id="email-field" />
+              <input type="text" placeholder="Email" id="email-field" />
             </div>
             <div class="warning email-warning"></div>
           </div>
@@ -63,16 +56,21 @@
           </div>
           <input type="submit" class="submit-btn" />
         </form>
+        <!-- Form End -->
+
         <p class="or-signup">or sign up with</p>
+
         <div class="icons">
           <img src="assets/images/google-icon.png" alt="" />
           <img src="assets/images/facebook-icon.png" alt="" />
           <img src="assets/images/apple-icon.png" alt="" />
         </div>
       </div>
+      <!-- Form Container End -->
     </div>
     <!-- Site Wrapper End -->
 
+    <!-- External Custom JS -->
     <script src="js/script.js"></script>
   </body>
 </html>
