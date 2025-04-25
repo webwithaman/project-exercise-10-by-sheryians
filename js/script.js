@@ -20,17 +20,11 @@ const isValidUsername = (usernameValue) => {
     isValid = false;
     warningMessage = "📝 Please enter Username";
   } else {
-    let regex = /^[A-Za-z]+$/;
+    let regex = /^[a-z0-9]{3,30}$/;
     if (!regex.test(usernameValue)) {
       isValid = false;
       warningMessage =
-        "🆎 Only letters & spaces allowed (no digits and special symbols)";
-    } else if (usernameValue.length < minLength) {
-      isValid = false;
-      warningMessage = "📏 Username must be at least 3 characters";
-    } else if (usernameValue.length > maxLength) {
-      isValid = false;
-      warningMessage = "📏 Username cannot be larger than 30 characters";
+        "⚠️ Username must be 3-30 chars, lowercase letters and numbers only (no special characters)";
     }
   }
 
@@ -46,14 +40,14 @@ const isValidEmail = (emailValue) => {
   if (emailValue.length === 0) {
     isValid = false;
     warningMessage = "📝 Please enter Email";
+  } else {
+    let regex =
+      /^[a-zA-Z0-9]+(?:[._-]?[a-zA-Z0-9]+)*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    if (!regex.test(emailValue)) {
+      isValid = false;
+      warningMessage = "Please enter email in valid format";
+    }
   }
-  // else {
-  //   let regex = /[A-Za-z]/;
-  //   if (!regex.test(emailValue)) {
-  //     isValid = false;
-  //     warningMessage = "Please enter Valid Email";
-  //   }
-  // }
 
   return { isValid, warningMessage };
 };
@@ -67,21 +61,15 @@ const isValidPassword = (passwordValue) => {
   if (passwordValue.length === 0) {
     isValid = false;
     warningMessage = "📝 Please enter Password";
+  } else {
+    let regex =
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@#$%^&*])[A-Za-z\d@#$%^&*]{8,}$/;
+    if (!regex.test(passwordValue)) {
+      isValid = false;
+      warningMessage =
+        "⚠️ Password must be 8+ chars with at least 1 uppercase, 1 lowercase, 1 number & 🔒 1 special (@#*%).";
+    }
   }
-  // else {
-  //   let regex = /^[A-Za-z]+$/;
-  //   if (!regex.test(usernameValue)) {
-  //     isValid = false;
-  //     warningMessage =
-  //       "🆎 Only letters & spaces allowed (no digits and special symbols)";
-  //   } else if (usernameValue.length < minLength) {
-  //     isValid = false;
-  //     warningMessage = "📏 Name must be at least 3 characters";
-  //   } else if (usernameValue.length > maxLength) {
-  //     isValid = false;
-  //     warningMessage = "📏 Name cannot be larger than 30 characters";
-  //   }
-  // }
 
   return { isValid, warningMessage };
 };
@@ -112,11 +100,38 @@ const isValidForm = () => {
   return true;
 };
 
+let formFeedbackIndicator = document.querySelector(".form-feedback-indicator");
+
 myForm.addEventListener("submit", function (e) {
   e.preventDefault();
 
-  if (isValidForm()) console.log("valid");
-  else console.log("not valid");
+  formFeedbackIndicator.style.display = "flex";
+
+  if (isValidForm()) {
+    formFeedbackIndicator.lastElementChild.classList.add("fa-check");
+    formFeedbackIndicator.lastElementChild.classList.remove("fa-xmark");
+    formFeedbackIndicator.lastElementChild.firstElementChild = "success";
+    formFeedbackIndicator.lastElementChild.lastElementChild =
+      "form successfully sumitted";
+    formFeedbackIndicator.classList.add("animate-form-feedback-indicator");
+    formFeedbackIndicator.style.setProperty("--color", "rgb(0, 236, 0)");
+    inputFields.forEach((element) => {
+      element.value = "";
+    });
+  } else {
+    formFeedbackIndicator.lastElementChild.classList.add("fa-xmark");
+    formFeedbackIndicator.lastElementChild.classList.remove("fa-check");
+    formFeedbackIndicator.lastElementChild.firstElementChild = "error";
+    formFeedbackIndicator.lastElementChild.lastElementChild =
+      "form submission unsuccessful";
+    formFeedbackIndicator.classList.add("animate-form-feedback-indicator");
+    formFeedbackIndicator.style.setProperty("--color", "rgb(236, 0, 0)");
+  }
+
+  setTimeout(() => {
+    formFeedbackIndicator.classList.remove("animate-form-feedback-indicator");
+    formFeedbackIndicator.style.display = "none";
+  }, 2300);
 });
 
 inputFields.forEach((element) => {

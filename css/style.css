@@ -63,9 +63,6 @@ textarea {
 
 /* Common Styles for Frequently Used Elements End */
 
-/* Reusable Components & Utility Classes Start */
-/* Reusable Components & Utility Classes End */
-
 /* Page-Specific Styles Start */
 .site-wrapper {
   min-height: 100vh;
@@ -79,6 +76,66 @@ textarea {
   align-items: center;
   justify-content: center;
   padding: 2rem;
+}
+
+.form-feedback-indicator {
+  padding: 1.5rem 1.8rem;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.094);
+  background-color: #fff;
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  display: none;
+  --color: rgb(0, 236, 0);
+  border-radius: 1rem;
+  align-items: center;
+  gap: 2rem;
+  overflow: hidden;
+}
+
+.form-feedback-indicator i {
+  width: 2.8rem;
+  height: 2.8rem;
+  text-align: center;
+  line-height: 2.8rem;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  background-color: var(--color);
+  color: white;
+}
+
+.form-feedback-indicator h6 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.form-feedback-indicator p {
+  font-size: 1.2rem;
+  font-weight: 450;
+  color: rgb(176, 176, 176);
+  text-transform: capitalize;
+}
+
+.form-feedback-indicator::before {
+  content: "";
+  width: 0;
+  height: 0.5rem;
+  background-color: var(--color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.form-feedback-indicator.animate-form-feedback-indicator::before {
+  animation: animate-form-feedback-indicator 2s linear 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes animate-form-feedback-indicator {
+  100% {
+    width: 100%;
+  }
 }
 
 .form-container {
