@@ -66,12 +66,14 @@ textarea {
 /* Page-Specific Styles Start */
 .site-wrapper {
   min-height: 100vh;
-  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZMs2CPKC6-Ey8_TvPWw0xvOXIYRi6sa18xQ&s); */
-  background-image: linear-gradient(rgba(0, 0, 0, 0.153), rgba(0, 0, 0, 0.221)),
-    url(https://images.pexels.com/photos/1470405/pexels-photo-1470405.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.153), rgba(0, 0, 0, 0.221)),
-    url(https://images.pexels.com/photos/7974826/pexels-photo-7974826.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-  background-size: 100% 100%;
+  background-image: linear-gradient(
+      to right,
+      rgba(229, 255, 0, 0.253),
+      rgba(0, 0, 0, 0.224),
+      rgba(255, 0, 238, 0.358)
+    ),
+    url(../assets/images/bg-img.jpeg);
+  background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,7 +81,7 @@ textarea {
 }
 
 .form-feedback-indicator {
-  padding: 1.5rem 1.8rem;
+  padding: 1.5rem 2rem;
   box-shadow: 0 0 4px rgba(0, 0, 0, 0.094);
   background-color: #fff;
   position: fixed;
@@ -94,12 +96,12 @@ textarea {
 }
 
 .form-feedback-indicator i {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.6rem;
+  height: 2.6rem;
   text-align: center;
-  line-height: 2.8rem;
+  line-height: 2.6rem;
   border-radius: 50%;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   background-color: var(--color);
   color: white;
 }
@@ -108,11 +110,12 @@ textarea {
   font-size: 1.6rem;
   font-weight: 600;
   text-transform: capitalize;
+  margin-bottom: 0.1rem;
 }
 
 .form-feedback-indicator p {
-  font-size: 1.2rem;
-  font-weight: 450;
+  font-size: 1.3rem;
+  font-weight: 400;
   color: rgb(176, 176, 176);
   text-transform: capitalize;
 }
@@ -139,7 +142,7 @@ textarea {
 }
 
 .form-container {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.201);
@@ -157,8 +160,8 @@ textarea {
 }
 
 .form-container .message {
-  font-size: 1.2rem;
-  font-weight: 450;
+  font-size: 1.3rem;
+  font-weight: 400;
   color: rgb(176, 176, 176);
   text-transform: capitalize;
 }
@@ -184,6 +187,19 @@ form {
   transition: all 0.2s linear;
 }
 
+#password-field {
+  padding-right: 4rem;
+}
+
+.input-box:has(#password-field) i:last-child {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .input-box {
   background-color: rgb(237, 237, 237);
   border-radius: 0.5rem;
@@ -191,6 +207,7 @@ form {
   align-items: center;
   margin-bottom: 0.3rem;
   border: 2px solid transparent;
+  position: relative;
 }
 
 .input-box:focus-within {
@@ -202,7 +219,7 @@ form {
   color: black;
 }
 
-.input-box i {
+.input-box i:first-child {
   font-size: 1.5rem;
   padding-left: 1rem;
 }
@@ -212,6 +229,7 @@ form {
   background-color: transparent;
   border: none;
   padding: 0.8rem;
+  font-size: 1.4rem;
   font-family: var(--font-family-2);
   font-weight: 500;
   color: grey;
@@ -278,3 +296,44 @@ form {
   width: 2.7rem;
 }
 /* Page-Specific Styles End */
+
+@media screen and (max-width: 900px) {
+  .site-wrapper {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .form-feedback-indicator {
+    width: 100%;
+    max-width: 320px;
+    position: relative;
+    top: initial;
+    right: initial;
+  }
+}
+
+@media (max-width: 340px) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 260px) {
+  * {
+    word-wrap: break-word;
+  }
+
+  html {
+    font-size: 40%;
+  }
+}
+
+@media (max-width: 180px) {
+  * {
+    word-break: break-all;
+  }
+
+  html {
+    font-size: 18%;
+  }
+}
